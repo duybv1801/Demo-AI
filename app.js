@@ -14,8 +14,6 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use(bodyParser.json());
 
-import crypto from 'crypto';
-
 const GITHUB_WEBHOOK_SECRET = process.env.GITHUB_WEBHOOK_SECRET;
 
 app.post('/webhook', async (req, res) => {
@@ -43,7 +41,7 @@ app.post('/webhook', async (req, res) => {
             const pull_number = pull_request.number;
 
             console.log(`Processing PR #${pull_number} for ${owner}/${repo}`);
-            
+
             try {
                 const { diff } = await getPullRequestDetails(owner, repo, pull_number);
 
@@ -64,7 +62,7 @@ app.post('/webhook', async (req, res) => {
 
 // Basic route
 app.get('/', (req, res) => {
-    res.send('AI PR Reviewer Agent is running!');
+    res.send('AI PR Reviewer Agent is runninggggggg!');
 });
 
 // Start server
