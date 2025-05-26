@@ -57,6 +57,6 @@ COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # Entrypoint script
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
-
+#testttttttttt
 # Ch?y entrypoint script khi container kh?i d?ng
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
