@@ -7,7 +7,7 @@ RUN apk add --no-cache \
     zip unzip git curl bash shadow libxml2-dev supervisor
 
 # Cài đặt Node.js và npm
-RUN apk add --no-cache nodejs npm
+# RUN apk add --no-cache nodejs npm
 
 # Cài d?t các extensions PHP
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
@@ -25,15 +25,15 @@ COPY . .
 
 # Copy file Composer tru?c d? t?n d?ng cache Docker
 # COPY composer.json composer.lock ./
-RUN composer update && composer update barryvdh/laravel-debugbar
+# RUN composer update && composer update barryvdh/laravel-debugbar
 # RUN composer install --no-ansi --no-dev --no-interaction --no-scripts --optimize-autoloader
 RUN composer install
 
 # Cài đặt các dependency của Node.js
-RUN npm install
+# RUN npm install
 
 # Chạy build cho frontend
-RUN npm run dev
+# RUN npm run dev
 
 # Sao chép file .env
 COPY .env .env
